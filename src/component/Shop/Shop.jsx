@@ -12,10 +12,20 @@ const Shop = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-    useEffect(()=>{
+    useEffect(() => {
         const storedCart = getShoppingCart();
-        console.log(storedCart)
-    }, []);
+        // step 1 get id
+        for (const id in storedCart) {
+            // step 2 get the product using by id
+            const addedProduct = products.find(product => product.id === id);
+            // step 3 get quantity 
+            const quantity = storedCart[id];
+            addedProduct.quantity = quantity;
+            console.log(addedProduct)
+        }
+    }, [products]);
+
+
 
     const [cart, setCart] = useState([]);
     const handleAddToCart = (product) => {
