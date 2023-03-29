@@ -14,16 +14,32 @@ const Shop = () => {
     }, []);
     useEffect(() => {
         const storedCart = getShoppingCart();
-        // step 1 get id
+        const saveCart = [];
+        //step 1  get id in the shopping cart 
         for (const id in storedCart) {
             // step 2 get the product using by id
             const addedProduct = products.find(product => product.id === id);
-            // step 3 get quantity 
-            const quantity = storedCart[id];
-            addedProduct.quantity = quantity;
-            console.log(addedProduct)
+            // step 3 get quantity
+            if (addedProduct) {
+                const quantity = storedCart[id]
+                addedProduct.quantity = quantity;
+                saveCart.push (addedProduct);
+            }
+            // console.log(addedProduct)
         }
-    }, [products]);
+    }, [products])
+    // useEffect(() => {
+    //     const storedCart = getShoppingCart();
+    //     // step 1 get id
+    //     for (const id in storedCart) {
+    //         // step 2 get the product using by id
+    //         const addedProduct = products.find(product => product.id === id);
+    //         // step 3 get quantity 
+    //         const quantity = storedCart[id];
+    //         addedProduct.quantity = quantity;
+    //         console.log(addedProduct);
+    //     }
+    // }, [products]);
 
 
 
