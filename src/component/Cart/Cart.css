@@ -32,6 +32,9 @@
     background: #FF3030;
     border-radius: 4px;
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .review-btn {
@@ -40,4 +43,7 @@
     background: #FF9900;
     border-radius: 4px;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
