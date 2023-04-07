@@ -23,7 +23,7 @@ const Shop = () => {
             if (addedProduct) {
                 const quantity = storedCart[id]
                 addedProduct.quantity = quantity;
-                saveCart.push (addedProduct);
+                saveCart.push(addedProduct);
             }
             // console.log(addedProduct)
         }
@@ -50,7 +50,9 @@ const Shop = () => {
                     }
                 </div>
                 <div className="cart-container">
-                    <Cart cart={cart}></Cart>
+                    <Cart
+                        key={cart.id}
+                        cart={cart}></Cart>
                 </div>
             </div>
         </div>
